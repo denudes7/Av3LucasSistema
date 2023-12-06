@@ -26,7 +26,11 @@ class ProdutoPremium extends Produto {
     public void habilitarDesconto() {
         this.aplicarDesconto = true;
     }
-
+    public void envioDeBrinde(double totalCompra) {
+        if (aplicarDesconto && totalCompra > 40) {
+            System.out.println("Parabéns! Você ganhou um brinde especial.");
+        }
+    }
     @Override
     public String toString() {
         return "ProdutoPremium - " + getNome() + " - R$" + calcularPreco();
